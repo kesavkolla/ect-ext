@@ -1,0 +1,20 @@
+{
+	"name": "ect-ext"
+	, "version": "0.1"
+	, "description": "CompoundJS adapter for ect templating engine"
+	, "author": {
+		"name": "Kesav Kumar Kolla"
+		, "email": "kesavkolla@hotmail.com"
+	}
+	, "contributors": [
+	]
+	, "main": "index.js"
+	, "engines": {
+		"node": ">= 0.10.0"
+	}
+	, "dependencies": {}
+	, "devDependencies": {}
+	, "repository": {
+		"url": "git@github.com:kesavkolla/ect-ext.git"
+	}
+}

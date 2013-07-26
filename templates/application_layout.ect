@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title><%- @title %></title>
+	<%- @stylesheetLinkTag 'http://cdn.jsdelivr.net/bootstrap/2.3.2/css/bootstrap.min.css', 'http://cdn.jsdelivr.net/bootstrap/2.3.2/css/bootstrap-responsive.min.css', 'application', 'bootstrap-responsive' %>
+	<%- @csrfMetaTag() %>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+</head>
+<body>
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container-fluid"><a class="brand" href="/">Project Name</a></div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<% flash = @request.flash('info').poop() %>
+		<% if flash : %>
+		<div class="alert alert-info">
+			<a class="close" data-dismiss="alert">×</a>
+			<%- flash %>
+		</div>
+		<% end %>
+		<% flash = request.flash('error').pop() %>
+		<% if flash : %>
+		<div class="alert alert-error">
+			<a class="close" data-dismiss="alert">×</a>
+			<%- flash %>
+		</div>
+		<% end %>
+
+		<%- body %>
+		<hr />
+		<footer>
+			<p>&copy; Company <% d = new Date() %><%- d.getFullYear() %></p>
+		</footer>
+	</div>
+	<%- @javascriptIncludeTag 'http://cdn.jsdelivr.net/jquery/2.0.3/jquery.min.js', 'http://cdn.jsdelivr.net/bootstrap/2.3.2/js/bootstrap.min.js', 'rails', 'application' %>
+</body>
+</html>

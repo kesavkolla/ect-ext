@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title><%- @title %></title>
+<%- @stylesheetLinkTag 'http://cdn.jsdelivr.net/bootstrap/2.3.2/css/bootstrap.min.css'
+						,'http://cdn.jsdelivr.net/bootstrap/2.3.2/css/bootstrap-responsive.min.css'
+						, 'application' %>
+<meta charset="UTF-8" />
+<%- @csrfMetaTag() %>
+</head>
+<body>
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container"><a class="brand" href="/">Project name</a></div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<% flash = @request.flash('info').poop() %>
+		<% if flash : %>
+		<div class="alert alert-info">
+			<a class="close" data-dismiss="alert">×</a>
+			<%- flash %>
+		</div>
+		<% end %>
+		<% flash = request.flash('error').pop() %>
+		<% if flash : %>
+		<div class="alert alert-error">
+			<a class="close" data-dismiss="alert">×</a>
+			<%- flash %>
+		</div>
+		<% end %>
+		
+		<%- body %>
+		<hr />
+		<footer>
+			<p>&copy; Company <% d=new Date(); %> <%= d.getFullYear() %></p>
+		</footer>
+	</div>
+<%- @contentFor('javascripts') %>
+</body>
+</html>
