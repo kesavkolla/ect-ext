@@ -1,4 +1,9 @@
 ect-ext
 =======
 
-CompoundJS extension for ect templating engine
+[CompoundJS](http://compoundjs.com) MVC framework extension for ect templating engine.
+
+
+## Installation
+
+    npm install ejs-ext
