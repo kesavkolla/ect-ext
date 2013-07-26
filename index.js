@@ -38,7 +38,7 @@ exports.templateText = function (name, data) {
 						fields.push(' %></td></tr>');
 						break;
 				}
-			}
+			});
 			return fs.readFileSync(exports.template('scaffold_show')).toString().replace('FIELDS', fields.join('\n\n        '));
 		case 'scaffold_form':
 			var form = new Array();
@@ -70,7 +70,7 @@ exports.templateText = function (name, data) {
 						form.push('</div>');
 						break;
 				}
-			}
+			});
 			return form.join('\n\n');
 	}
 }
