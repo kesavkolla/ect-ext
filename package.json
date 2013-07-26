@@ -1,6 +1,6 @@
 {
 	"name": "ect-ext"
-	, "version": "0.1"
+	, "version": "0.0.1"
 	, "description": "CompoundJS adapter for ect templating engine"
 	, "author": {
 		"name": "Kesav Kumar Kolla"
