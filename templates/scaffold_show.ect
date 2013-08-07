@@ -16,11 +16,11 @@
 
 <div class="well">
 	<%- @link_to '<i class="icon-edit icon-white"></i> Edit', @pathTo.edit_{{ model }}(@{{ model }}), class: 'btn btn-primary' %>
-	<%- @link_to '<i class="icon-remove icon-white"></i> Delete', @pathTo.{{ model }}(@{{ model }}), 
+	<%- @link_to '<i class="icon-remove icon-white"></i> Delete', @pathTo.{{ model }}(@{{ model }}), {
 		class: 'btn btn-danger'
-		method: 'delete'
-		remote: true
-		jsonp: '(function (u) { location.href = u; })' %>
+		, method: 'delete'
+		, remote: true
+		, jsonp: '(function (u) { location.href = u; })' } %>
     or
 	<%- @link_to 'Back to index', @pathTo.{{ models }} %>
 </div>
